@@ -33,9 +33,67 @@ header img {
 main {
     height: 75vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+    gap: 10px;
+}
+
+#personalization-area {
+    border: solid black 2px;
+    border-radius: 15px;
+    height: 500px;
+    width: 325px;
+    background-color: #441c28;
+    color: #e60f0f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+h2 {
+    font-size: 30px;
+    color: #e60f0f;
+    text-decoration: underline;
+}
+
+#character-options {
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 20px;
+}
+
+button {
+    cursor: pointer;
+}
+
+#createBtn {
+    width: 50%;
+    height: 35px;
+    border-radius: 5px;
+    color: rgb(209, 19, 19);
+    background-color: black;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#character {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 500px;
+    width: 400px;
+    background-color: #211c44;
+    border-radius: 15px;
+}
+
+#character img {
+    height: 400px;
+    width: 400px;
 }
 
 footer {

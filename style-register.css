@@ -69,19 +69,7 @@ input {
     height: 25px;
 }
 
-#user-area {
-    display: flex;
-    flex-direction: column;
-    margin: 0 5% 0 5%;
-}
-
-#password-area {
-    display: flex;
-    flex-direction: column;
-    margin: 0 5% 0 5%;
-}
-
-#passwordconfirm-area {
+.input-area {
     display: flex;
     flex-direction: column;
     margin: 0 5% 0 5%;
@@ -98,7 +86,6 @@ input {
     width: 50%;
     height: 35px;
     border-radius: 5px;
-    margin-top: 20px;
     color: rgb(209, 19, 19);
     background-color: black;
     font-size: 20px;
