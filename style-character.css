@@ -13,6 +13,16 @@ body {
     background-image: url('Arts/Ossuary_background.jpg');
 }
 
+h2 {
+    font-size: 30px;
+    color: #e60f0f;
+    text-decoration: underline;
+}
+
+button {
+    cursor: pointer;
+}
+
 header {
     height: 15vh;
     width: 100%;
@@ -32,6 +42,12 @@ header img {
 
 main {
     height: 75vh;
+    display: block;
+    gap: 10px;
+}
+
+#character-container {
+    height: 65vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -43,7 +59,7 @@ main {
     border: solid black 2px;
     border-radius: 15px;
     height: 500px;
-    width: 325px;
+    width: 400px;
     background-color: #441c28;
     color: #e60f0f;
     display: flex;
@@ -52,32 +68,12 @@ main {
     justify-content: space-around;
 }
 
-h2 {
-    font-size: 30px;
-    color: #e60f0f;
-    text-decoration: underline;
-}
-
 #character-options {
-    height: 35vh;
+    height: 90%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     font-size: 20px;
-}
-
-button {
-    cursor: pointer;
-}
-
-#createBtn {
-    width: 50%;
-    height: 35px;
-    border-radius: 5px;
-    color: rgb(209, 19, 19);
-    background-color: black;
-    font-size: 20px;
-    cursor: pointer;
 }
 
 #character {
@@ -92,8 +88,23 @@ button {
 }
 
 #character img {
-    height: 400px;
+    height: 90%;
     width: 400px;
+}
+
+#save-btn-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#save-btn {
+    color: rgb(209, 19, 19);
+    background-color: black;
+    border-radius: 10px;
+    width: 175px;
+    height: 65px;
+    font-size: 25px;
 }
 
 footer {
