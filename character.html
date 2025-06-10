@@ -21,42 +21,56 @@
                 <h2>PERSONALIZAÇÃO</h2>
                 <div id="character-options">
                     <h3>Aparência</h3>
-                    <h4>Sexo:</h4>
-                    <div class="choice-area">
-                        <button class="choiceBtn">&larr;</button>
-                        <input type="text">
-                        <button class="choiceBtn">&rarr;</button>
+                    <h4>Gênero:</h4>
+                    <div class="choice-area-appearance">
+                        <button id="previousSex" class="choiceBtn">&larr;</button>
+                        <p id="sex">Homem</p>
+                        <button id="nextSex" class="choiceBtn">&rarr;</button>
                     </div>
                     <h4>Cor de pele:</h4>
-                    <div class="choice-area">
-                        <button class="choiceBtn">&larr;</button>
-                        <input type="text">
-                        <button class="choiceBtn">&rarr;</button>
+                    <div class="choice-area-appearance">
+                        <button id="previousSkin" class="choiceBtn">&larr;</button>
+                        <p id="skin">Preta</p>
+                        <button id="nextSkin" class="choiceBtn">&rarr;</button>
                     </div>
                     <h4>Cabelo:</h4>
-                    <div class="choice-area">
-                        <button class="choiceBtn">&larr;</button>
-                        <input type="text">
-                        <button class="choiceBtn">&rarr;</button>
+                    <div class="choice-area-appearance">
+                        <button id="previousHair" class="choiceBtn">&larr;</button>
+                        <p id="hair">Preto</p>
+                        <button id="nextHair" class="choiceBtn">&rarr;</button>
                     </div>
                     <h3>Atributos</h3>
-                    <h4>Força:</h4>
-                    <div class="choice-area">
-                        <button class="choiceBtn">&larr;</button>
-                        <input type="text">
-                        <button class="choiceBtn">&rarr;</button>
-                    </div>
-                    <h4>Inteligência:</h4>
-                    <div class="choice-area">
-                        <button class="choiceBtn">&larr;</button>
-                        <input type="text">
-                        <button class="choiceBtn">&rarr;</button>
+                    <div id="attributes-area">
+                        <div class="choice-area-attributes">
+                            <h4>Força</h4>
+                            <button id="upForce" class="choiceBtn">&uarr;</button>
+                            <p id="force">3</p>
+                            <button id="downForce" class="choiceBtn">&darr;</button>
+                        </div>
+                        <div class="choice-area-attributes">
+                            <h4>Defesa</h4>
+                            <button id="upDefense" class="choiceBtn">&uarr;</button>
+                            <p id="defense">3</p>
+                            <button id="lowDefense" class="choiceBtn">&darr;</button>
+                        </div>
+                        <div class="choice-area-attributes">
+                            <h4>Vida</h4>
+                            <button id="upLife" class="choiceBtn">&uarr;</button>
+                            <p id="life">5</p>
+                            <button id="downLife" class="choiceBtn">&darr;</button>
+                        </div>
+                        <div class="choice-area-attributes">
+                            <h4>Mana</h4>
+                            <button id="upMana" class="choiceBtn">&uarr;</button>
+                            <p id="mana">5</p>
+                            <button id="downMana" class="choiceBtn">&darr;</button>
+                        </div>
                     </div>
                 </div>
             </div>
             <div id="character">
                 <h2>PERSONAGEM</h2>
-                <img src="Characters/Char_men_black_blackhair.png" alt="char">
+                <img id="characterImg" src="Characters/Char_man_black_blackhair.png" alt="char">
             </div>
         </div>
         <div id="save-btn-container">
@@ -66,7 +80,6 @@
     <footer>
         <p>COPYRIGHT &copy; Leonardo N.S.</p>
     </footer>
-    
-    <script src="script-register.js"></script>
+    <script src="script-character.js"></script>
 </body>
 </html>

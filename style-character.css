@@ -68,6 +68,34 @@ main {
     justify-content: space-around;
 }
 
+.choice-area-appearance {
+    display: flex;
+    justify-content: space-between;
+    background-color: #211c44;
+}
+
+#attributes-area {
+    display: flex;
+    justify-content: space-around;
+    gap: 5px;
+}
+
+#attributes-area .choiceBtn {
+    width: 1.5vh;
+}
+
+.choice-area-attributes {
+    display: flex;
+    flex-direction: column;
+    border: solid 2px black;
+    border-radius: 5px;
+    height: 10.5vh;
+    width: 7vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #211c44;
+}
+
 #character-options {
     height: 90%;
     display: flex;
