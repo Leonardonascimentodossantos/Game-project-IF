@@ -21,13 +21,13 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
+    font-size: 3vh;
     font-family: "Metal Mania", system-ui;
 }
 
 header img {
-    height: 125px;
-    width: 125px;
+    height: 15vh;
+    width: 15vh;
 }
 
 main {
@@ -40,32 +40,32 @@ main {
 }
 
 main img {
-    width: 300px;
-    height: 250px;
+    width: 32vh;
+    height: 25vh;
 }
 
 #login-title{
-    margin-bottom: 10px;
-    font-size: 25px;
+    margin-bottom: 1vh;
+    font-size: 3vh;
 }
 
 #login-area {
     border: solid black 2px;
     border-radius: 15px;
-    height: 350px;
-    width: 325px;
+    height: 40vh;
+    width: 33vh;
     background-color: #441c28;
     color: #e60f0f;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 25px;
+    gap: 3vh;
     justify-content: center;
 }
 
 input {
-    width: 225px;
-    height: 30px;
+    width: 30vh;
+    height: 3vh;
 }
 
 #button-area {
@@ -79,9 +79,9 @@ button {
     color: rgb(209, 19, 19);
     background-color: black;
     border-radius: 5px;
-    width: 120px;
-    height: 30px;
-    font-size: 15px;
+    width: 14vh;
+    height: 4vh;
+    font-size: 1.7vh;
 }
 
 footer {

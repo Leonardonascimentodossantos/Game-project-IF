@@ -1,3 +1,4 @@
+// Constantes character
 const sex = document.querySelector("#sex");
 const previousSex = document.querySelector("#previousSex");
 const nextSex = document.querySelector("#nextSex");
@@ -9,6 +10,7 @@ const previousHair = document.querySelector("#previousHair");
 const nextHair = document.querySelector("#nextHair");
 const characterImg = document.querySelector("#characterImg");
 
+// Constantes attributes
 const force = document.querySelector("#force");
 const upForce = document.querySelector("#upForce");
 const downForce = document.querySelector("#downForce");
@@ -22,6 +24,7 @@ const mana = document.querySelector("#mana");
 const upMana = document.querySelector("#upMana");
 const downMana = document.querySelector("#downMana");
 
+//FUNÇÃO CHARACTER
 const options = {
     sex: ["Homem", "Mulher"],
     skin: ["Preta", "Branca"],
@@ -104,3 +107,109 @@ function updateCharacterImg () {
         characterImg.src = ""
     }
 }
+
+//FUNÇÃO ATTRIBUTES
+//Constantes Attributes
+const attributes = {
+    force: ["1", "2", "3", "4", "5"],
+    defense: ["1", "2", "3", "4", "5"],
+    life: ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
+    mana: ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
+};
+
+let indexAttributes = {
+    force: 2,
+    defense: 2,
+    life: 4,
+    mana: 4,
+};
+
+// Função para atualizar os displays
+function updateDisplays() {
+    force.textContent = attributes.force[indexAttributes.force];
+    defense.textContent = attributes.defense[indexAttributes.defense];
+    life.textContent = attributes.life[indexAttributes.life];
+    mana.textContent = attributes.mana[indexAttributes.mana];
+}
+
+// Função para ajustar força/defesa (soma = 6)
+function adjustForceDefense(changedAttr, direction) {
+    if (changedAttr === 'force') {
+        if (direction === 'up' && indexAttributes.force < 4) { // 4 porque o array vai de 0 a 4 (valores 1-5)
+            indexAttributes.force++;
+            indexAttributes.defense--;
+        } else if (direction === 'down' && indexAttributes.force > 0) {
+            indexAttributes.force--;
+            indexAttributes.defense++;
+        }
+    } else if (changedAttr === 'defense') {
+        if (direction === 'up' && indexAttributes.defense < 4) {
+            indexAttributes.defense++;
+            indexAttributes.force--;
+        } else if (direction === 'down' && indexAttributes.defense > 0) {
+            indexAttributes.defense--;
+            indexAttributes.force++;
+        }
+    }
+}
+
+// Função para ajustar vida/mana (soma = 10)
+function adjustLifeMana(changedAttr, direction) {
+    if (changedAttr === 'life') {
+        if (direction === 'up' && indexAttributes.life < 8) { // 8 porque o array vai de 0 a 8 (valores 1-9)
+            indexAttributes.life++;
+            indexAttributes.mana--;
+        } else if (direction === 'down' && indexAttributes.life > 0) {
+            indexAttributes.life--;
+            indexAttributes.mana++;
+        }
+    } else if (changedAttr === 'mana') {
+        if (direction === 'up' && indexAttributes.mana < 8) {
+            indexAttributes.mana++;
+            indexAttributes.life--;
+        } else if (direction === 'down' && indexAttributes.mana > 0) {
+            indexAttributes.mana--;
+            indexAttributes.life++;
+        }
+    }
+}
+
+// Event listeners
+upForce.addEventListener('click', () => {
+    adjustForceDefense('force', 'up');
+    updateDisplays();
+});
+downForce.addEventListener('click', () => {
+    adjustForceDefense('force', 'down');
+    updateDisplays();
+});
+
+upDefense.addEventListener('click', () => {
+    adjustForceDefense('defense', 'up');
+    updateDisplays();
+});
+downDefense.addEventListener('click', () => {
+    adjustForceDefense('defense', 'down');
+    updateDisplays();
+});
+
+upLife.addEventListener('click', () => {
+    adjustLifeMana('life', 'up');
+    updateDisplays();
+});
+downLife.addEventListener('click', () => {
+    adjustLifeMana('life', 'down');
+    updateDisplays();
+});
+
+upMana.addEventListener('click', () => {
+    adjustLifeMana('mana', 'up');
+    updateDisplays();
+});
+downMana.addEventListener('click', () => {
+    adjustLifeMana('mana', 'down');
+    updateDisplays();
+});
+
+// Inicialização
+updateDisplays();
