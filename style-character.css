@@ -11,6 +11,10 @@ body {
     justify-content: space-between;
     align-items: center;
     background-image: url('Arts/Ossuary_background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    
 }
 
 h2 {
@@ -55,22 +59,40 @@ main {
 }
 
 #personalization-area {
-    border: solid black 2px;
-    border-radius: 15px;
-    height: 50vh;
+    border: solid 2.5px #e60f0f;
+    border-radius: 18px;
+    height: 54vh;
     width: 40vh;
-    background-color: #441c28;
-    color: #e60f0f;
+    background: linear-gradient(135deg, #441c28 80%, #e60f0f 100%);
+    color: #fff;
+    box-shadow: 0 8px 32px 0 rgba(230,15,15,0.25), 0 2px 8px 0 #07042b;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    transition: box-shadow 0.3s, background 0.3s;
+}
+
+#personalization-area:hover {
+    box-shadow: 0 12px 40px 0 rgba(230,15,15,0.35), 0 4px 16px 0 #07042b;
+    background: linear-gradient(120deg, #441c28 60%, #e60f0f 100%);
 }
 
 .choice-area-appearance {
     display: flex;
     justify-content: space-between;
-    background-color: #211c44;
+    background: linear-gradient(90deg, #211c44 80%, #e60f0f 100%);
+    border-radius: 14px;
+    border: 2px solid #e60f0f;
+    box-shadow: 0 2px 12px 0 rgba(33,28,68,0.25);
+    padding: 1.2vh 2vh;
+    margin: 1vh 0;
+    transition: box-shadow 0.3s, background 0.3s;
+}
+
+.choice-area-appearance:hover {
+    background: linear-gradient(90deg, #e60f0f 60%, #211c44 100%);
+    box-shadow: 0 4px 18px 0 rgba(230,15,15,0.25);
 }
 
 #obs {
@@ -83,8 +105,34 @@ main {
     gap: 2px;
 }
 
-#attributes-area .choiceBtn {
-    width: 1.5vh;
+#attributes-area .choiceBtn,
+.choiceBtn {
+    width: 2.5vh;
+    height: 2.5vh;
+    background: radial-gradient(circle at 60% 40%, #ff3c3c 60%, #441c28 100%);
+    color: #fff;
+    border: 2px solid #e60f0f;
+    border-radius: 50%;
+    font-size: 1.6vh;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(230,15,15,0.25), 0 0 0 2px #fff2 inset;
+    transition: 
+        transform 0.18s cubic-bezier(.4,2,.6,1),
+        box-shadow 0.18s,
+        background 0.18s,
+        color 0.18s;
+    outline: none;
+    position: relative;
+    z-index: 1;
+}
+
+#attributes-area .choiceBtn:hover,
+.choiceBtn:hover {
+    background: radial-gradient(circle at 40% 60%, #fff 60%, #e60f0f 100%);
+    color: #e60f0f;
+    transform: scale(1.22) rotate(-8deg);
+    box-shadow: 0 6px 18px 2px rgba(230,15,15,0.35), 0 0 0 3px #fff inset;
+    border-color: #fff;
 }
 
 .choice-area-attributes {
@@ -97,12 +145,6 @@ main {
     justify-content: center;
     align-items: center;
     background-color: #211c44;
-}
-
-.choiceBtn {
-    height: 2.5vh;
-    width: 1.8vh;
-    font-size: 1.4vh;
 }
 
 #character-options {
@@ -126,8 +168,11 @@ main {
 }
 
 #character img {
-    height: 90%;
-    width: 40vh;
+       width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 13px; /* opcional, para combinar com o contêiner */
+    display: block;
 }
 
 #save-btn-container {
@@ -137,12 +182,49 @@ main {
 }
 
 #save-btn {
-    color: rgb(209, 19, 19);
-    background-color: black;
-    border-radius: 10px;
-    width: 20vh;
+    color: #fff;
+    background: linear-gradient(90deg, #e60f0f 0%, #441c28 100%);
+    border: none;
+    border-radius: 14px;
+    width: 22vh;
     height: 7vh;
     font-size: 3.5vh;
+    font-family: "Metal Mania", system-ui;
+    font-weight: bold;
+    letter-spacing: 2px;
+    box-shadow: 0 4px 18px 0 rgba(230,15,15,0.25), 0 2px 8px 0 #211c44;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: 
+        transform 0.18s cubic-bezier(.4,2,.6,1),
+        box-shadow 0.18s,
+        background 0.18s,
+        color 0.18s;
+}
+
+#save-btn::after {
+    content: "";
+    position: absolute;
+    left: -75%;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.05) 100%);
+    transform: skewX(-25deg);
+    transition: left 0.5s cubic-bezier(.4,2,.6,1);
+    pointer-events: none;
+}
+
+#save-btn:hover {
+    background: linear-gradient(90deg, #fff 0%, #e60f0f 100%);
+    color: #e60f0f;
+    transform: scale(1.07);
+    box-shadow: 0 8px 28px 0 rgba(230,15,15,0.35), 0 4px 16px 0 #211c44;
+}
+
+#save-btn:hover::after {
+    left: 120%;
 }
 
 footer {

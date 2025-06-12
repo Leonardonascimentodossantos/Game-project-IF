@@ -24,6 +24,18 @@ const mana = document.querySelector("#mana");
 const upMana = document.querySelector("#upMana");
 const downMana = document.querySelector("#downMana");
 
+
+   window.addEventListener('DOMContentLoaded', function() {
+        const audio = document.getElementById('bg-music');
+        // Tenta tocar automaticamente
+        audio.volume = 0.4; // ajuste o volume se quiser
+        audio.play().catch(() => {
+            // Se o navegador bloquear, toca ao primeiro clique em qualquer lugar
+            document.body.addEventListener('click', () => {
+                audio.play();
+            }, { once: true });
+        });
+    });
 //FUNÇÃO CHARACTER
 const options = {
     sex: ["Homem", "Mulher"],
@@ -88,7 +100,7 @@ updateDisplay(hair, "hair");
 
 function updateCharacterImg () {
     if (sex.textContent === "Homem" && skin.textContent === "Preta" && hair.textContent === "Preto") {
-        characterImg.src = "Characters/Char_man_black_blackhair.png"
+        characterImg.src = "Characters/primeiro_personagemM.gif"
     } else if (sex.textContent === "Homem" && skin.textContent === "Preta" && hair.textContent === "Branco") {
         characterImg.src = "Characters/Char_man_black_whitehair.png"
     } else if (sex.textContent === "Homem" && skin.textContent === "Branca" && hair.textContent === "Preto") {
@@ -213,3 +225,65 @@ downMana.addEventListener('click', () => {
 
 // Inicialização
 updateDisplays();
+
+// Função para obter usuário logado
+function getLoggedUser() {
+    return localStorage.getItem('username');
+}
+
+// Função para carregar personagem salvo
+async function loadCharacter() {
+    const username = getLoggedUser();
+    if (!username) return;
+    const response = await fetch('/api/get-character', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username })
+    });
+    if (response.ok) {
+        const data = await response.json();
+        if (data.character) {
+            // Atualize os campos com os dados salvos
+            currentIndex.sex = options.sex.indexOf(data.character.sex);
+            currentIndex.skin = options.skin.indexOf(data.character.skin);
+            currentIndex.hair = options.hair.indexOf(data.character.hair);
+            indexAttributes.force = attributes.force.indexOf(data.character.force);
+            indexAttributes.defense = attributes.defense.indexOf(data.character.defense);
+            indexAttributes.life = attributes.life.indexOf(data.character.life);
+            indexAttributes.mana = attributes.mana.indexOf(data.character.mana);
+            updateDisplay(sex, "sex");
+            updateDisplay(skin, "skin");
+            updateDisplay(hair, "hair");
+            updateDisplays();
+            updateCharacterImg();
+        }
+    }
+}
+
+// Salvar personagem
+document.getElementById('save-btn').addEventListener('click', async () => {
+    const username = getLoggedUser();
+    if (!username) {
+        alert('Usuário não logado!');
+        return;
+    }
+    const character = {
+        sex: options.sex[currentIndex.sex],
+        skin: options.skin[currentIndex.skin],
+        hair: options.hair[currentIndex.hair],
+        force: attributes.force[indexAttributes.force],
+        defense: attributes.defense[indexAttributes.defense],
+        life: attributes.life[indexAttributes.life],
+        mana: attributes.mana[indexAttributes.mana]
+    };
+    const response = await fetch('/api/save-character', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, character })
+    });
+    const data = await response.json();
+    alert(data.message);
+});
+
+// Carregar personagem ao abrir a página
+window.addEventListener('DOMContentLoaded', loadCharacter);

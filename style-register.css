@@ -11,6 +11,10 @@ body {
     justify-content: space-between;
     align-items: center;
     background-image: url('Arts/Ossuary_background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    
 }
 
 header {

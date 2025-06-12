@@ -1,0 +1,28 @@
+[
+  {
+    "username": "admin",
+    "password": "1234",
+    "permissao": "admin"
+  },
+  {
+    "username": "sd",
+    "password": "1234",
+    "email": "sd",
+    "permissao": "user"
+  },
+  {
+    "username": "MS",
+    "password": "12345",
+    "email": "@",
+    "permissao": "user",
+    "character": {
+      "sex": "Homem",
+      "skin": "Preta",
+      "hair": "Preto",
+      "force": "5",
+      "defense": "1",
+      "life": "4",
+      "mana": "6"
+    }
+  }
+]
