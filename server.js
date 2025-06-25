@@ -10,7 +10,13 @@ const USERS_FILE = path.join(__dirname, 'login-system-project', 'src', 'usuario.
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use(express.static(__dirname)); // Para servir seus arquivos HTML/CSS/JS
+// Sirva arquivos estáticos da raiz do projeto
+app.use(express.static(__dirname));
+
+// Redirecione a raiz para login.html
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'login.html'));
+});
 
 // Rota para registrar novo usuário
 app.post('/api/register', (req, res) => {

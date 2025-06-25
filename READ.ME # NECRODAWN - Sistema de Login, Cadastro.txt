@@ -1,0 +1,85 @@
+# NECRODAWN - Sistema de Login, Cadastro e Personagem
+
+Este projeto é um sistema web completo com funcionalidades de cadastro, login e personalização de personagem para o jogo **NECRODAWN**. Ele utiliza Node.js, Express e armazena os dados dos usuários em um arquivo JSON.
+
+## Estrutura do Projeto
+
+```
+/
+├── Arts/
+├── Characters/
+├── login-system-project/
+├── character.html
+├── login.html
+├── register.html
+├── script-character.js
+├── script-login.js
+├── script-register.js
+├── style-character.css
+├── style-login.css
+├── style-register.css
+├── server.js
+├── package.json
+└── ...
+```
+
+## Como Rodar o Projeto
+
+> **Atenção:**  
+> Para que o sistema funcione corretamente, é obrigatório rodar o servidor backend.  
+> **Se não rodar o comando abaixo, o projeto NÃO irá funcionar!**
+
+1. **Abra o terminal na raiz do projeto** (onde está o arquivo `server.js`).
+
+
+
+2. **Inicie o servidor:**
+   ```sh
+   node server.js
+   ```
+
+3. **Acesse o sistema no navegador:**
+   ```
+   http://localhost:3000
+   ```
+
+## Funcionalidades
+
+- **Cadastro de Usuário:**  
+  Preencha nome de usuário, e-mail e senha em `register.html`. Os dados são salvos em `login-system-project/src/usuario.json`.
+
+- **Login:**  
+  Faça login em `login.html` usando seu usuário e senha cadastrados.
+
+- **Personalização de Personagem:**  
+  Após o login, personalize seu personagem em `character.html` (aparência e atributos) e salve.
+
+- **Persistência:**  
+  Todos os dados são armazenados em `login-system-project/src/usuario.json`.
+
+## Observações
+
+- O servidor precisa estar rodando para que as páginas web consigam cadastrar, logar e salvar personagens.
+- O projeto utiliza apenas arquivos estáticos e um backend simples em Node.js/Express.
+- Para alterar usuários manualmente, edite o arquivo [`login-system-project/src/usuario.json`](login-system-project/src/usuario.json).
+
+## Scripts Úteis
+
+- Para rodar o servidor:
+  ```sh
+  node server.js
+  ```
+
+- Para instalar dependências:
+  ```sh
+  npm install
+  ```
+
+## Licença
+
+MIT
+
+---
+
+> **Dica:**  
+> Sempre rode o comando `node server.js` antes de acessar o sistema

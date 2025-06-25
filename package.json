@@ -6,5 +6,22 @@
     "body-parser": "^2.2.0",
     "cors": "^2.8.5",
     "express": "^5.1.0"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "game-project-if",
+  "version": "1.0.0",
+  "main": "hello-world.spec.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Leonardonascimentodossantos/Game-project-IF.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Leonardonascimentodossantos/Game-project-IF/issues"
+  },
+  "homepage": "https://github.com/Leonardonascimentodossantos/Game-project-IF#readme",
+  "description": ""
 }

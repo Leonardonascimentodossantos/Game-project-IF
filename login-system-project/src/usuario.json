@@ -24,5 +24,35 @@
       "life": "4",
       "mana": "6"
     }
+  },
+  {
+    "username": "Marcos",
+    "password": "1234",
+    "email": "@",
+    "permissao": "user",
+    "character": {
+      "sex": "Mulher",
+      "skin": "Preta",
+      "hair": "Preto",
+      "force": "5",
+      "defense": "1",
+      "life": "8",
+      "mana": "2"
+    }
+  },
+  {
+    "username": "Leo",
+    "password": "1234",
+    "email": "@",
+    "permissao": "user",
+    "character": {
+      "sex": "Mulher",
+      "skin": "Branca",
+      "hair": "Preto",
+      "force": "2",
+      "defense": "4",
+      "life": "9",
+      "mana": "1"
+    }
   }
 ]

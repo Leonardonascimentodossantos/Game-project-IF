@@ -100,7 +100,7 @@ updateDisplay(hair, "hair");
 
 function updateCharacterImg () {
     if (sex.textContent === "Homem" && skin.textContent === "Preta" && hair.textContent === "Preto") {
-        characterImg.src = "Characters/primeiro_personagemM.gif"
+        characterImg.src = "Characters/Char_man_black_blackhair.png"
     } else if (sex.textContent === "Homem" && skin.textContent === "Preta" && hair.textContent === "Branco") {
         characterImg.src = "Characters/Char_man_black_whitehair.png"
     } else if (sex.textContent === "Homem" && skin.textContent === "Branca" && hair.textContent === "Preto") {
